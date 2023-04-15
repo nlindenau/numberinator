@@ -9,8 +9,4 @@ COPY /app ./cloud_middleware
 
 EXPOSE 5000
 
-RUN ls -la
-
-#CMD [ "python3", "-m" , "flask", "--app", "cloud_middleware", "run", "--debug"]
-
 CMD [ "python3", "-m" , "flask", "--app", "cloud_middleware", "run", "--host=0.0.0.0", "--debug"]
