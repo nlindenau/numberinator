@@ -27,8 +27,6 @@ def create_app():
 
         return json_response, 200
 
-    return app
-
     @app.route('/v1/sv-translation', methods=['GET'])
     def produce_sv_translation():
         request_data = request.get_json()
