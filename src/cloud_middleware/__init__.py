@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify, request
 from cloud_middleware.translator import get_number_translation_sv
 
 def create_app():
@@ -16,5 +16,21 @@ def create_app():
     def produce_sv_translation():
         example_number = get_number_translation_sv(3)
         return 'I will return a Swedish translation of your number! Did you know {example_number} is 3 in Swedish?'
+    
+    @app.route('/v1/test', methods=['GET'])
+    def test():
+        request_data = request.get_json()
+
+        user = request_data['username']
+
+        response = {
+            "you": user,
+        }
+
+        json_response = jsonify(response)
+
+        return json_response, 200
+        
+
 
     return app
