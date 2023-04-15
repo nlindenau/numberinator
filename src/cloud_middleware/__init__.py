@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, request
+from cloud_middleware.request_processor import get_written_number, get_user_number, get_azure_subscription_key
 from cloud_middleware.translator import get_number_translation_sv
+from cloud_middleware.tts import TTS_file
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
@@ -8,29 +10,21 @@ def create_app():
     def hello():
         return 'Hello from cloud middleware service!'
     
-    @app.route('/tts')
-    def produce_tts():
-        return 'I will return a TTS file!'
-
-    @app.route('/sv-translation')
+    @app.route('/v1/sv-translation', methods=['GET'])
     def produce_sv_translation():
-        example_number = get_number_translation_sv(3)
-        return 'I will return a Swedish translation of your number! Did you know {example_number} is 3 in Swedish?'
-    
-    @app.route('/v1/test', methods=['GET'])
-    def test():
         request_data = request.get_json()
 
-        user = request_data['username']
+        user_number = get_user_number(request_data)
+        subscription_key = request_data['subscirption-key']
+
+        swedish_number = get_number_translation_sv(user_number, subscription_key)
 
         response = {
-            "you": user,
+            "swedish_translation": swedish_number
         }
 
         json_response = jsonify(response)
 
         return json_response, 200
-        
-
 
     return app
