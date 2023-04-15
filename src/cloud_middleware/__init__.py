@@ -1,4 +1,5 @@
 from flask import Flask
+from cloud_middleware.translator import get_number_translation_sv
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
@@ -13,6 +14,7 @@ def create_app():
 
     @app.route('/sv-translation')
     def produce_sv_translation():
-        return 'I will return a Swedish translation of your number!'
+        example_number = get_number_translation_sv(3)
+        return 'I will return a Swedish translation of your number! Did you know {example_number} is 3 in Swedish?'
 
     return app

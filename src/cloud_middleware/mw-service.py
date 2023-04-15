@@ -1,5 +1,5 @@
-from translator import get_number_translation_sv
-from tts import get_tts_file
+from cloud_middleware.translator import get_number_translation_sv
+from cloud_middleware.tts import get_tts_file
 
 def get_user_number():
     user_number = int(input("What number would you like to be translated? "))
