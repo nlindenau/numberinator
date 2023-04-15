@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from app.cloud_requester import get_translations
 
 load_dotenv()
 
@@ -12,9 +13,5 @@ DIGIT_RECOGNITION_PORT = os.getenv('DIGIT_RECOGNITION_PORT')
 
 def main():
     print(f"I will connect to cloud middleware using {CLOUD_MIDDLEWARE_HOST}:{CLOUD_MIDDLEWARE_PORT}")
-
-def get_number_recognition():
-    print("I will get a number recognition from digit recognition service")
-
 
 main()
