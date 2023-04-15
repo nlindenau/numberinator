@@ -13,12 +13,6 @@ DIGIT_RECOGNITION_PORT = os.getenv('DIGIT_RECOGNITION_PORT')
 def main():
     print(f"I will connect to cloud middleware using {CLOUD_MIDDLEWARE_HOST}:{CLOUD_MIDDLEWARE_PORT}")
 
-def get_translations():
-    print("I will get translations from cloud middleware")
-
-def get_tts():
-    print("I will get tts from cloud middleware")
-
 def get_number_recognition():
     print("I will get a number recognition from digit recognition service")
 
