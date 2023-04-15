@@ -6,7 +6,7 @@ def get_user_number(request):
     """
     user_number = request
     user_number = int(user_number)
-    
+
     return user_number
 
 def run_cloud_middleware(request):
@@ -19,5 +19,3 @@ def run_cloud_middleware(request):
     print(f"{user_number} is {user_number_sv} in Swedish.")
     
     return user_number_sv, tts_number_file
-
-run_cloud_middleware()
