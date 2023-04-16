@@ -18,6 +18,6 @@ def get_user_number(user_request):
 def get_azure_subscription_key(user_request):
     """Retruns Azure subscription key from the incoming request.
     """
-    subscription_key = user_request['subscirption-key']
+    subscription_key = user_request['subscription-key']
 
     return subscription_key
