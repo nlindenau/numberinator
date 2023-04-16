@@ -10,6 +10,15 @@ def create_request(key_1, value_1, key_2, value_2):
 
     return request_body
 
+def create_image_request(key_1, value_1):
+    """Creates a request for the digit recognition service.
+    """
+    request_body = {
+        key_1: value_1
+    }
+
+    return request_body
+
 def get_data_from_response(response, searched_data):
     """Returns data under a given key from a raw request.
     """
