@@ -15,7 +15,7 @@ def create_app():
         request_data = request.get_json()
 
         user_number = get_written_number(request_data)
-        subscription_key = request_data['subscirption-key']
+        subscription_key = request_data['subscription-key']
 
         tts_link = get_tts_file(user_number, subscription_key)
 
@@ -32,7 +32,7 @@ def create_app():
         request_data = request.get_json()
 
         user_number = get_user_number(request_data)
-        subscription_key = request_data['subscirption-key']
+        subscription_key = request_data['subscription-key']
 
         swedish_number = get_number_translation_sv(user_number, subscription_key)
 
