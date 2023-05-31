@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recognition-deployment
+  labels:
+    app: recognition-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: recognition-service
+  template:
+    metadata:
+      labels:
+        app: recognition-service
+    spec:
+      containers:
+      - name: cloud-mw
+        image: cloud-mw 
+        ports:
+        - containerPort: 5000
+      - name: server
+        image: server
+        ports:
+        - containerPort: 5002
+      - name: frontend
+        image: frontend
+        ports:
+        - containerPort: 8080

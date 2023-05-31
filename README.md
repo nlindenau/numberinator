@@ -21,8 +21,7 @@ This is my final project for the Intelligent Cloud Applications class '23 at Cen
 - Minikube 
 - Azure account and a subscription key
 
-## Setting up develomplent enviroment with dockercompose
-
 ## Setting up production enviroment with Minikube
-
+1. Run `sh scripts/build-containers.sh`. 
+2. `kubectl apply -f yamls/recognition-deployment.yaml`
 ## Architecture 
