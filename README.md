@@ -25,3 +25,4 @@ This is my final project for the Intelligent Cloud Applications class '23 at Cen
 1. Run `sh scripts/build-containers.sh`. 
 2. `kubectl apply -f yamls/recognition-deployment.yaml`
 ## Architecture 
+![diagram](img/architecture.png)
